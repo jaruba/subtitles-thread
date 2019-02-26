@@ -1,0 +1,27 @@
+{
+  "name": "subtitles-thread",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "author": "Branza Alexandru <branza.alex@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "request": "2.65.0"
+  },
+  "devDependencies": {
+    "bluebird": "^3.1.5",
+    "opensubtitles-api": "https://github.com/jaruba/opensubtitles-api/tarball/master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jaruba/subtitles-thread.git"
+  },
+  "bugs": {
+    "url": "http://github.com/jaruba/subtitles-thread/issues",
+    "email": "branza.alex@gmail.com"
+  },
+  "scripts": {
+    "postinstall": "node install.js",
+    "build": "pkg worker.js --out-path build/ --targets linux-x64,macos-x64,win-x64,linux-x86,macos-x86,win-x86"
+  }
+}
