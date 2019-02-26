@@ -25,5 +25,5 @@ if (fs.existsSync(path.join(subtitlesThread, fileName)))
   subtitlesThread = path.join(subtitlesThread, fileName)
 
 module.exports = () => {
-  return child.exec('"' + subtitlesThread + '"')
+  return child.spawn(subtitlesThread, { stdio: ['inherit', 'inherit', 'inherit', 'ipc'] })
 }
