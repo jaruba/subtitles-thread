@@ -89,8 +89,7 @@ subtitles.byExactHash = (hash, fileSize, tag, limit) => {
         limit: limit,
     };
 
-   if (!objective.sublanguageid)
-        objective.sublanguageid = 'all'
+   searcher.sublanguageid = objective.sublanguageid || 'all'
 
     if (objective.imdbid)
         searcher.imdbid = objective.imdbid
