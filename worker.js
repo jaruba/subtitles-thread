@@ -69,7 +69,8 @@ subtitles.searchFor = (searcher, objective, postTo) => {
 }
 
 subtitles.byAnything = (objective, limit) => {
-    objective.sublanguageid = 'all'
+   if (!objective.sublanguageid)
+        objective.sublanguageid = 'all'
     objective.extensions = ['srt','sub','vtt']
     objective.limit = limit
 
@@ -81,13 +82,21 @@ subtitles.byExactHash = (hash, fileSize, tag, limit) => {
     var filename = objective.filename;
     
     var searcher = {
-        sublanguageid: 'all',
         extensions: ['srt','sub','vtt'],
         hash: hash,
         filesize: fileSize,
         filename: filename,
-        limit: limit
+        limit: limit,
     };
+
+   if (!objective.sublanguageid)
+        objective.sublanguageid = 'all'
+
+    if (objective.imdbid)
+        searcher.imdbid = objective.imdbid
+
+    if (objective.query)
+        searcher.query = objective.query
 
     if (parser(filename).shortSzEp()) {
         searcher.season = parser(filename).season().toString();
