@@ -6,7 +6,7 @@
   "author": "Branza Alexandru <branza.alex@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "request": "2.65.0"
+    "request": "2.88.2"
   },
   "devDependencies": {
     "bluebird": "^3.1.5",
